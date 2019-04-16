@@ -1,6 +1,6 @@
 //箭头函数没有自己的this，指向的是定义时的，而不是执行时的this;
 let obj ={
-   // m:new Map(),
+    m:new Map(),
     init:function(){
         this.bind();
     },
@@ -11,7 +11,7 @@ let obj ={
             if(_name =='' || _msg ==''){
                 alert('请输入信息')
             }else {
-                //this.m.set(_name,_msg);
+                this.m.set(_name,_msg);
                 this.list();
                 $(".name,.message").val('');
             }
