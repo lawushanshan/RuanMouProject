@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>全选</title>
+    <script src="../js/vue.js"></script>
+    <script src="./index.js"></script>
+    <template id="my-check">
+        <div>
+                <input type="checkbox" v-model='all.check' @change="checkAllChange()">
+                <label>{{all.name}}</label>
+                <ul>
+                    <li v-for="(list,i) in lists" :key="i">
+                        <input type="checkbox" v-model="list.check" @change="curChange()">
+                        <label>{{list.name}}</label>
+                    </li>
+                </ul>
+        </div>
+     
+    </template>
+</head>
+<body>
+    <div id="my">
+        <my-check :all="all" :lists="lists"></my-check>
+    </div>
+</body>
+</html>
