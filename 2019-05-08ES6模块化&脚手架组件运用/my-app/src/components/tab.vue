@@ -5,13 +5,16 @@
 			<li v-for="(v,index) in lists" :class="n==index?'active':''"  :key="index"
 				v-on:click="action(index)">
 				{{v.title}}
-			</li>   
+			</li>
 		</ul>
 		<div class="tab-con">
 			<div v-for="(v,index) in lists" v-show="n==index" :key="index">
 				{{v.content}}
 			</div>
 		</div>
+    <div>
+      <h3>当前路由:{{$route.params.id}}</h3>
+    </div>
     </div>
 </template>
 
@@ -24,9 +27,9 @@ export default {
                     {title:'a2',content:'a222'},
                     {title:'a3',content:'a3333'},
                     {title:'a4',content:'a4444'},
-                    {title:'a5',content:'a55555'}], 
+                    {title:'a5',content:'a55555'}],
     }
-  }, 
+  },
   methods:{  //方法
     action:function(num){
         this.n = num;

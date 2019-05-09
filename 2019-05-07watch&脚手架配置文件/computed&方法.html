@@ -23,7 +23,7 @@
                 return this.obj.price*this.obj.count*this.obj.sale+this.obj.freight
               },
               getN:function(){
-                console.log(a);  //a属于非响应式依赖
+                console.log('计算属性基于缓存'+a);  //a属于非响应式依赖
                 return this.n -1;
               }
             },
